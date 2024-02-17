@@ -51,6 +51,12 @@ public class GameSession : MonoBehaviour
        scoreText.text = score.ToString();
     }
 
+    public void AddToHealth(int lifeToAdd)
+    {
+       playerLives += lifeToAdd;  
+       livesText.text = playerLives.ToString();
+    }
+
     private IEnumerator ResetGameSession()
     {
         yield return new WaitForSeconds(2);
