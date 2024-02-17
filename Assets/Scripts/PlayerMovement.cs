@@ -66,12 +66,12 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) 
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Climbing"))) 
         {
            return;
         }
         
-        if(value.isPressed)
+        if(value.isPressed) 
         {
             // do stuff
             AudioSource.PlayClipAtPoint(jumpSFX, Camera.main.transform.position,clipVolume);
@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 ClimbVelocity = new Vector2 (myRigidbody.velocity.x, moveInput.y * climbSpeed);
         myRigidbody.velocity = ClimbVelocity;
-        myRigidbody.gravityScale = 0f;
+        myRigidbody.gravityScale = 1.5f;
 
         bool playerHasVerticalSpeed = Mathf.Abs(myRigidbody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("isClimbing",playerHasVerticalSpeed);
