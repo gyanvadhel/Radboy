@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Climbing"))) 
+        if (!myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) 
         {
            return;
         }
@@ -120,11 +120,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if(myBodyCollider&&myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
+        if(myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             isAlive = false;
             myAnimator.SetTrigger("Dying");
-            myRigidbody.velocity += new Vector2 (1f,jumpSpeed)/1.5f;
+            myRigidbody.velocity += new Vector2 (1f,3f)/1.5f;
             AudioSource.PlayClipAtPoint(hurtSFX, Camera.main.transform.position,clipVolume);
             //myBodyCollider.enabled = false;
             //myFeetCollider.enabled = false;
