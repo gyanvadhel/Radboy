@@ -27,6 +27,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void SureQuit()
+    {
+        SceneManager.LoadScene("Quit");
+    }
+
     public void Buttons()
     {
         audioSource.Play();
