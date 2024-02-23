@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 10f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-    [SerializeField] Vector2 deathKick = new Vector2(20f, 10f);
     [SerializeField] AudioClip jumpSFX;
     [SerializeField] AudioClip hurtSFX;
     [SerializeField] float clipVolume = 0.25f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform gun;
+    [SerializeField] AudioClip shootSFX;
    
     Vector2 moveInput;
 
@@ -58,6 +60,15 @@ public class PlayerMovement : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
+   /* void OnFire(InputValue value)
+    {
+        if(!isAlive)
+        {
+            return;
+        }
+        Instantiate(bullet,gun.position,transform.rotation);
+        AudioSource.PlayClipAtPoint(shootSFX,Camera.main.transform.position,clipVolume);
+    }*/
 
     void OnJump(InputValue value)
     {
