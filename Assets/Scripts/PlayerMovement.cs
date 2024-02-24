@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
-   /* void OnFire(InputValue value)
+   /*void OnFire(InputValue value)
     {
         if(!isAlive)
         {
