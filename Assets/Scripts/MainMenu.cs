@@ -16,18 +16,21 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SettingMenu()
+    public void ControlsMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("ControlsMenu");
     }
 
     public void Menu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void SureQuit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Quit");   
     }
 }

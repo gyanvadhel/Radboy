@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if(!isAlive)
+        if(!isAlive || PauseMenu.isPaused)
         {
             return;
         }
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if(!isAlive)
+        if(!isAlive || PauseMenu.isPaused)
         {
             return;
         }
